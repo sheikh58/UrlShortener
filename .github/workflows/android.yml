@@ -25,6 +25,9 @@ jobs:
       
     - name: Increase Kotlin/Native heap size
       run: echo -e "\norg.jetbrains.kotlin.native.memoryMaxHeapSize=12g" >> gradle.properties
+
+    - name: Increase heap size
+      run: echo "\nkotlin.daemon.jvmargs=-Xmx6g" >> gradle.properties
       
     - name: Build with Gradle
       run: ./gradlew build
