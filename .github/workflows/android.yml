@@ -22,5 +22,9 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+      
+    - name: Increase Kotlin/Native heap size
+      run: echo "org.jetbrains.kotlin.native.memoryMaxHeapSize=6g" >> gradle.properties
+    
     - name: Build with Gradle
       run: ./gradlew build
